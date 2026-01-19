@@ -6,12 +6,6 @@ public class Barrel extends GameObject {
     private double speed;
     private Direction direction;
 
-    public Barrel(int x, int y, int damage) {
-        super(x, y);
-        this.damage = damage;
-        this.speed = 1.5;
-    }
-
     public Barrel(int x, int y, int damage, double speed, Direction direction) {
         super(x, y);
         this.damage = damage;
