@@ -1,3 +1,5 @@
+
+//This is to act as the barrel that will roll and cause damage to players upon collision.
 public class Barrel extends GameObject {
     private int damage;
     private double speed = 1.5;

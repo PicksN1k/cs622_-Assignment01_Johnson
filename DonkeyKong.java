@@ -1,3 +1,5 @@
+
+//The goal of this class is to represent the DonkeyKong character in the game, which can throw barrels.
 public class DonkeyKong extends GameObject{
 
      public DonkeyKong(int x, int y) {

@@ -10,7 +10,7 @@ public abstract class GameObject {
         this.y = y;
     }
 
-    // Getters / Setters (naming conventions ✔)
+    // Getters / Setters
     public int getX() {
         return x;
     }
