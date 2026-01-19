@@ -30,6 +30,10 @@ public class Mario extends GameObject {
         System.out.println("Mario jumps to height: " + height);
     }
 
+     public void move(Direction direction) {
+        System.out.println("Mario moves " + direction);
+    }
+
     public void move(Direction direction, int distance) {
         System.out.println("Mario moves " + direction + " by " + distance);
     }

@@ -1,17 +1,25 @@
 
 //The goal of this class is to represent the DonkeyKong character in the game, which can throw barrels.
-public class DonkeyKong extends GameObject{
+public class DonkeyKong extends GameObject {
 
-     public DonkeyKong(int x, int y) {
+    private int barrelsThrown = 0;
+
+    public DonkeyKong(int x, int y) {
         super(x, y);
     }
 
     @Override
     public void update() {
-        System.out.println("DonkeyKong is guarding.");
+        System.out.println("Donkey Kong is guarding.");
     }
 
-    public Barrel throwCask() {
-        return new Barrel(getX(), getY(), 5);
+    public Barrel throwBarrel() {
+        barrelsThrown++;
+        System.out.println("Donkey Kong throws barrel #" + barrelsThrown);
+        return new Barrel(getX(), getY(), 5, 1.5);
+    }
+
+    public int getBarrelsThrown() {
+        return barrelsThrown;
     }
 }
