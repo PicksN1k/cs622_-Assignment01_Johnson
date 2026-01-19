@@ -50,4 +50,5 @@ public class Mario extends GameObject {
             System.out.println("Mario cannot climb here.");
         }
     }
+}
 
