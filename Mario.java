@@ -42,5 +42,12 @@ public class Mario extends GameObject {
         if (lives < 0) lives = 0;
         System.out.println("Mario takes " + damage + " damage. Lives now: " + lives);
     }
+    public void climb(Map map) {
+    if (map.hasLadderAt(getX(), getY())) {
+        System.out.println("Mario climbs a ladder.");
+    } else {
+        System.out.println("Mario is not on a ladder.");
+    }
+}
 }
 
