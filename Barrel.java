@@ -12,7 +12,7 @@ public class Barrel extends GameObject {
         this.speed = 1.5;
     }
 
-    public Barrel(int x, int y, int damage, double speed) {
+    public Barrel(int x, int y, int damage, double speed, Direction direction) {
         super(x, y);
         this.damage = damage;
         this.speed = speed;
