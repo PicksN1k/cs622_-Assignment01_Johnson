@@ -32,7 +32,7 @@ public class Barrel extends GameObject {
     public void setSpeed(double speed) {
         this.speed = speed;
     }
-
+    
     @Override
     public void update() {
         System.out.println("Barrel rolling at speed " + speed);

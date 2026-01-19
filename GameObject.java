@@ -5,6 +5,8 @@ public abstract class GameObject {
     private int x;
     private int y;
 
+    //setting and getting methods for x and y coordinates, so that objects can be moved and tracked.
+
     public GameObject(int x, int y) {
         this.x = x;
         this.y = y;
@@ -23,7 +25,7 @@ public abstract class GameObject {
     public void setY(int y) {
         this.y = y;
     }
-
+    
     public abstract void update();
 
     public boolean collidesWith(GameObject other) {

@@ -50,5 +50,9 @@ public class Mario extends GameObject {
             System.out.println("Mario cannot climb here.");
         }
     }
+    @Override
+    public void update() {
+        System.out.println("Mario is at (" + getX() + "," + getY() + ")");
+    }
 }
 
