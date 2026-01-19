@@ -17,20 +17,17 @@ public class Map {
         ladders.add(ladder);
     }
 
-    public List<Ladder> getLadders() {
-        return ladders;
+    public Ladder getLadderAt(int x, int y) {
+        for (Ladder ladder : ladders) {
+            if (ladder.getX() == x && ladder.getY() == y) {
+                return ladder;
+            }
+        }
+        return null;
     }
 
     public boolean hasLadderAt(int x, int y) {
-        for (Ladder ladder : ladders) {
-            if (ladder.getX() == x && ladder.getY() == y) {
-                return true;
-            }
-        }
-        return false;
-    }
-    public boolean canMoveUpFrom(int x, int y) {
-        return hasLadderAt(x, y);
+        return getLadderAt(x, y) != null;
     }
 
     public int getWidth() { return width; }
