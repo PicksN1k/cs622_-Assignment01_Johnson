@@ -4,7 +4,10 @@ public class GameDemo {
 
         Mario mario = new Mario(0, 0, 3);
         DonkeyKong donkeyKong = new DonkeyKong(10, 5);
+
         Map map = new Map(20, 20);
+        // Ladder placed at (2, 0) so Mario can reach it by moving RIGHT twice
+        map.addLadder(new Ladder(2, 0, 5));
 
         System.out.println("Starting Donkey Pong demo...\n");
 
@@ -15,13 +18,27 @@ public class GameDemo {
         // --- Demo tick 1: Mario movement + update ---
         System.out.println("=== Tick 1 ===");
         mario.move(Direction.RIGHT);
-        mario.move(Direction.UP);
+        mario.setX(mario.getX() + 1);   // reflect movement in position
         mario.update();
         donkeyKong.update();
         System.out.println();
 
-        // --- Demo tick 2: Donkey Kong throws a barrel ---
+        // --- Demo tick 2: Mario moves again and checks ladder, then Donkey Kong throws a barrel ---
         System.out.println("=== Tick 2 ===");
+
+        // Move Mario to (2,0) where the ladder is
+        mario.move(Direction.RIGHT);
+        mario.setX(mario.getX() + 1);
+
+        // Ladder interaction (if Mario is on a ladder, climb it)
+        if (map.hasLadderAt(mario.getX(), mario.getY())) {
+            System.out.println("Mario found a ladder at (" + mario.getX() + "," + mario.getY() + ")");
+            mario.climb(map); // should move Mario up by 1 (symbolic) or print climb message
+        } else {
+            System.out.println("Mario is not on a ladder.");
+        }
+
+        // Donkey Kong throws a barrel
         Barrel barrel1 = donkeyKong.throwBarrel();
         barrel1.update();
         System.out.println();

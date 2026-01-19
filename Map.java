@@ -29,6 +29,9 @@ public class Map {
         }
         return false;
     }
+    public boolean canMoveUpFrom(int x, int y) {
+        return hasLadderAt(x, y);
+    }
 
     public int getWidth() { return width; }
     public int getHeight() { return height; }

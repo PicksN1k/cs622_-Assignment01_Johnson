@@ -43,11 +43,12 @@ public class Mario extends GameObject {
         System.out.println("Mario takes " + damage + " damage. Lives now: " + lives);
     }
     public void climb(Map map) {
-    if (map.hasLadderAt(getX(), getY())) {
-        System.out.println("Mario climbs a ladder.");
-    } else {
-        System.out.println("Mario is not on a ladder.");
+    if (map.canMoveUpFrom(getX(), getY())) {
+        setY(getY() + 1); // symbolic upward movement
+        System.out.println("Mario climbs up the ladder to y=" + getY());
+        } else {
+            System.out.println("Mario cannot climb here.");
+        }
     }
-}
 }
 
