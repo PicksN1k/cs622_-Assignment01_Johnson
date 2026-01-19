@@ -1,0 +1,97 @@
+CS 622 – Assignment 1: DonkeyPong
+
+Author: Cole Johnson
+
+Overview
+
+This project is a conceptual object-oriented design demonstration based on the classic Donkey Kong game.
+The goal of the assignment is not to build a fully functional game, but to define classes, methods,
+and object interactions that demonstrate core object-oriented programming (OOP) principles discussed in class.
+The program simulates gameplay behavior through printed console output, using a tick-based progression to represent time.
+
+Objectives
+
+-Class and object definitions
+-Inheritance and polymorphism
+-Method overriding
+-Method overloading
+-Encapsulation and separation of responsibilities
+-Object collaboration through method calls
+-Executable Java code with visible runtime output
+-No graphics, real-time input, or full game loop are implemented, per assignment requirements.
+
+Class Design Summary
+
+GameObject (Base Class)
+
+-Abstract base class for movable game entities
+-Stores position (x, y)
+-Declares an abstract update() method
+-Provides shared collision logic
+
+Mario
+
+-Player-controlled character
+-Has lives and position
+-Supports movement, jumping (method overloading), climbing ladders, and taking damage
+-Interacts with the map to determine ladder availability
+
+DonkeyKong
+
+-Enemy character
+-Responsible for creating and throwing barrels
+-Tracks the total number of barrels thrown
+-Demonstrates method overriding through update()
+
+Barrel
+
+-Hazard object created by Donkey Kong
+-Has damage and speed attributes
+-Can collide with Mario and reduce lives
+-Prints its behavior during each update tick
+
+Map
+
+-Represents the static game environment
+-Stores map dimensions
+-Owns all ladder objects
+-Provides query methods for ladder access (getLadderAt)
+
+Ladder
+
+-Simple data object representing climbable structures
+-Defined by position and height
+-Does not inherit from GameObject since it has no active behavior
+
+Direction
+-Enumeration used to represent movement directions
+-Improves readability and prevents invalid direction values
+
+Tick-Based Simulation
+
+The game is demonstrated through a series of manual ticks, where each tick represents a single moment in simulated game time.
+During each tick:
+-Active objects execute their update() method
+-Key behaviors such as movement, barrel throwing, climbing, and collisions occur
+-Output is printed to the console to show progression
+This approach demonstrates time-based behavior without requiring a real game loop.
+
+Output
+
+Console output includes:
+-Tick labels
+-Movement messages
+-Ladder climbing actions
+-Barrel throws
+-Collision detection
+-Life reduction for Mario
+
+How to Run
+1. Open the project in a Java IDE
+2. Ensure all .java files are in the same package or default package
+3. Run the GameDemo class
+4. Observe the console output for simulated gameplay progression
+
+Please Note
+-All movement and interactions are intentionally hardcoded to simplify demonstration
+-No real user input or graphics are used
