@@ -31,7 +31,7 @@ public class Mario extends GameObject {
     }
 
     public void move(Direction direction, int distance) {
-    System.out.println("Mario moves " + direction + " by " + distance);
+        System.out.println("Mario moves " + direction + " by " + distance);
     }
 }
 
