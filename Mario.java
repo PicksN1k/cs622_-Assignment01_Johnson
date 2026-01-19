@@ -18,7 +18,7 @@ public class Mario extends GameObject {
     // Method overriding
     @Override
     public void update() {
-        System.out.println("Mario is updating.");
+        System.out.println("Mario is at (" + getX() + "," + getY() + ")");
     }
 
     // Method overloading
@@ -50,9 +50,4 @@ public class Mario extends GameObject {
             System.out.println("Mario cannot climb here.");
         }
     }
-    @Override
-    public void update() {
-        System.out.println("Mario is at (" + getX() + "," + getY() + ")");
-    }
-}
 
