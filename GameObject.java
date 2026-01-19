@@ -10,11 +10,9 @@ public abstract class GameObject {
         this.y = y;
     }
 
-    // Getters / Setters
     public int getX() {
         return x;
     }
-
     public void setX(int x) {
         this.x = x;
     }
@@ -22,11 +20,13 @@ public abstract class GameObject {
     public int getY() {
         return y;
     }
-
     public void setY(int y) {
         this.y = y;
     }
 
-    // Method to be overridden
     public abstract void update();
+
+    public boolean collidesWith(GameObject other) {
+        return this.x == other.x && this.y == other.y;
+    }
 }

@@ -37,5 +37,10 @@ public class Mario extends GameObject {
     public void move(Direction direction, int distance) {
         System.out.println("Mario moves " + direction + " by " + distance);
     }
+    public void takeDamage(int damage) {
+        lives -= damage;
+        if (lives < 0) lives = 0;
+        System.out.println("Mario takes " + damage + " damage. Lives now: " + lives);
+    }
 }
 

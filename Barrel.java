@@ -37,4 +37,8 @@ public class Barrel extends GameObject {
     public void update() {
         System.out.println("Barrel rolling at speed " + speed);
     }
+    public void onCollide(Mario mario) {
+    System.out.println("Barrel collided with Mario!");
+    mario.takeDamage(1);
+}
 }
