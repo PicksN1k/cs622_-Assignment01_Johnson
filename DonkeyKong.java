@@ -12,7 +12,8 @@ public class DonkeyKong extends GameObject {
     public void update() {
         System.out.println("Donkey Kong is guarding.");
     }
-
+    
+    // Method for Donkey Kong to throw a barrel
     public Barrel throwBarrel() {
         barrelsThrown++;
         System.out.println("Donkey Kong throws barrel #" + barrelsThrown);

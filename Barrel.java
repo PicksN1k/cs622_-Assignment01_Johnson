@@ -4,6 +4,7 @@ public class Barrel extends GameObject {
 
     private int damage;
     private double speed;
+    private Direction direction;
 
     public Barrel(int x, int y, int damage) {
         super(x, y);
@@ -15,6 +16,7 @@ public class Barrel extends GameObject {
         super(x, y);
         this.damage = damage;
         this.speed = speed;
+        this.direction = direction;
     }
 
     public int getDamage() {
@@ -32,10 +34,10 @@ public class Barrel extends GameObject {
     public void setSpeed(double speed) {
         this.speed = speed;
     }
-    
+
     @Override
     public void update() {
-        System.out.println("Barrel rolling at speed " + speed);
+        System.out.println("Barrel rolling "+ direction + " at speed " + speed);
     }
     public void onCollide(Mario mario) {
     System.out.println("Barrel collided with Mario!");
