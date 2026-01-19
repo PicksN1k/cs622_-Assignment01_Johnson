@@ -25,9 +25,10 @@ public abstract class GameObject {
     public void setY(int y) {
         this.y = y;
     }
-    
+    // Abstract method to be implemented by subclasses for updating the object's state.
     public abstract void update();
-
+    
+    // Method to check collision with another GameObject
     public boolean collidesWith(GameObject other) {
         return this.x == other.x && this.y == other.y;
     }
